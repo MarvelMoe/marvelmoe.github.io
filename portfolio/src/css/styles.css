@@ -1,0 +1,233 @@
+ body {
+     margin: 0;
+     padding: 0;
+     font-family: 'Oswald', sans-serif;
+}
+h1 {
+    font-size: 3em;
+    font-family: 'Oswald', sans-serif;
+     background: -webkit-linear-gradient(#eee, #333);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     font-weight: bold;
+ }
+ h2, p {
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+ }
+ .nav {
+     display: flex;
+}
+ .nav-item {
+     display: inline-block;
+     margin: 0 7vw;
+}
+ .nav-item a {
+     text-decoration: none;
+     color: #fff;
+     opacity: 0;
+     animation: fade-animation 2s linear forwards;
+}
+.nav-item a.active {
+    color: #bbb;
+}
+ .left-nav {
+     webkit-box-flex: 1;
+     -ms-flex: 1 1 0px;
+     -webkit-flex: 1 1 0px;
+     flex: 1 1 0px;
+}
+ .right-nav {
+     webkit-box-flex: 1;
+     -ms-flex: 1 1 0px;
+     -webkit-flex: 1 1 0px;
+     flex: 1 1 0px;
+}
+ .parent-nav {
+     display: flex;
+     justify-content: space-between;
+}
+ .mobile-bar-wrapper {
+     display: none;
+}
+ .desktop-logo, .mobile-logo {
+     animation-name: spinaroo;
+     animation-timing-function: linear;
+     animation-iteration-count: infinite;
+     animation-duration: 8s;
+     -webkit-transform-style: preserve-3d;
+     -moz-transform-style: preserve-3d;
+     -ms-transform-style: preserve-3d;
+     transform-style: preserve-3d;
+     height: 80px;
+}
+ .mobile-logo, .mobile-wrapper {
+     display: none;
+}
+ .mobile-logo {
+     height: 50px;
+}
+ .header-wrapper {
+     padding: 20px;
+     color: white;
+}
+ .app-wrapper {
+     text-align: center;
+     background-image: -webkit-radial-gradient(100% 100%,ellipse farthest-side,#dbf6c8 20%,#1cafc6 50%,#016cfd 110%);
+     background-image: radial-gradient(ellipse farthest-side at 100% 100%,#dbf6c8 20%,#1cafc6 50%,#016cfd 110%);
+     background-size: cover;
+     height: 100vh;
+}
+ .app-title {
+     font-size: 2.5em;
+}
+
+/*SVG CODE*/
+path {
+    animation: fill-animation  3s linear 3s forwards;
+    stroke-dasharray: 300;
+     
+}
+.dev {
+    font-size: 2.25em;
+    font-family: 'Oswald', sans-serif;
+    color: #fff;
+    position: absolute;
+    transform: translateX(-50%);
+    top: 45%;
+    opacity: 0;
+ }
+.front {
+        animation: front-end 2s linear 5s forwards;
+}
+.back {
+      animation: back-end 2s linear 5s forwards;
+}
+.g-tag {
+  fill: transparent;
+  stroke: #fff;
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: stroke-animation 7s linear forwards; 
+}
+
+/* MOBILE MENU */
+ .mobile-btn {
+     background: rgba(112,112,112,1);
+     background: linear-gradient(to right, rgba(112,112,112,1) 0%, rgba(107,107,107,1) 38%, rgba(107,107,107,1) 40%, rgba(125,125,125,1) 75%, rgba(125,125,125,1) 87%);
+     color: white;
+     border-radius: 3px;
+     padding: .6em 2.3em;
+     font-size: 1em;
+     border: none;
+     font-family: 'Oswald', sans-serif;
+}
+ .mobile-btn:hover {
+     background:  rgba(107,107,107,1);
+     cursor: pointer;
+}
+ .mobile-btn-wrap {
+   position: fixed;
+   bottom: 0px;
+   -webkit-transition: .5s all ease;
+   -o-transition: .5s all ease;
+   transition: .5s all ease;
+   left: 50%;
+   transform: translateX(-50%);
+   border-radius: 12px;
+}
+ .mobile-btn-wrap:hover .mobile-content {
+    display: block;
+}
+ .mobile-content {
+     display: none;
+     position: absolute;
+     top: -190px;
+     background-color: #f1f1f1;
+     min-width: 105px;
+     box-shadow: 0px 8px 10px 2px rgba(0,0,0,0.2);
+     z-index: 1;
+     border-radius: 7px;
+}
+ .mobile-content a {
+     color: #343;
+     padding: 12px 16px;
+     text-decoration: none;
+     display: block;
+     transition: .5s all ease;
+}
+ .mobile-content a:hover {
+    background-color: #ddd;
+}
+
+
+
+/* ANIMATIONS */
+ @keyframes spinaroo {
+     from {
+         -moz-transform: rotateY(0deg);
+         -ms-transform: rotateY(0deg);
+         transform: rotateY(0deg);
+    }
+     to {
+         -moz-transform: rotateY(-360deg);
+         -ms-transform: rotateY(-360deg);
+         transform: rotateY(-360deg);
+    }
+}
+
+@keyframes front-end {
+    from {
+        left: -100%
+    }
+      to {
+          left: 42%;
+          opacity: 1;
+       }
+  }
+
+  @keyframes back-end {
+      from {
+          left: 150%
+      }
+        to {
+            left: 56%;
+            opacity: 1;
+         }
+    }
+@keyframes fade-animation {
+      to {
+        opacity: 1;
+       }
+  }
+
+@keyframes stroke-animation {
+    to {
+      stroke-dashoffset: 0;
+     }
+}
+@keyframes fill-animation {
+  100% {
+    fill: #fff; 
+    } 
+}
+
+/* MEDIA QUEROES */
+@media screen and (max-width: 1175px) {
+    .dev   {
+      display: block;
+      position: relative;
+      top: -120px;
+    } }
+ @media screen and (max-width: 900px) {
+     .desktop-logo, .nav {
+         display: none;
+    }
+     .mobile-logo {
+         display: block;
+    }
+     .mobile-wrapper {
+         display: flex;
+    }
+}
+ 

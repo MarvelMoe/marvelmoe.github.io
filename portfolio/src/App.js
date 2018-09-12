@@ -1,16 +1,27 @@
 import React, { Component } from 'react';
-import logo from './logo.png';
-import './App.css';
+import { BrowserRouter, Route } from "react-router-dom";
 
+import './css/styles.css';
+import Home from './Home';
+import Connect from './Connect';
+import Header from './Header'; 
+import Work from './Work';
+import About from './About';
+
+
+ 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to Moe's Awesome Portfolio Site</h1>
-        </header>
-      </div>
+      <BrowserRouter>
+        <div className="app-wrapper">
+            <Header />
+             <Route exact path="/" component={Home} />
+             <Route path="/connect" component={Connect} />
+             <Route path="/work" component={Work} />
+             <Route path="/about" component={About} />
+        </div>
+      </BrowserRouter>
     );
   }
 }
