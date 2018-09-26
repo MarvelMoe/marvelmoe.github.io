@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from "react-router-dom";
 
-import './css/styles.css';
+import './css/main.css';
 import Home from './Home';
 import Connect from './Connect';
 import Header from './Header'; 

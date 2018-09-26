@@ -1,0 +1,12 @@
+ @keyframes fade-animation {
+     from {
+         opacity: 0
+    }
+     to {
+        opacity: 1
+    }
+}
+
+.work-wrapper, .connect {
+	animation: fade-animation 2s linear forwards;
+}

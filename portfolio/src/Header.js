@@ -15,19 +15,17 @@ class Header extends React.Component {
                   <div className="mobile-logo">
                         <img src={logo} className="mobile-logo" alt="logo" />
                   </div>
-                  <div className="mobile-btn-wrap">
-                    <button className="mobile-btn">Menu</button>
                     <div className="mobile-content">
-                       <NavLink exact to="/" className="home-img" >Home</NavLink>
-                       <NavLink to="/about">About</NavLink>
-                       <NavLink to="/work">Work</NavLink>
-                       <NavLink to="/connect">Connect</NavLink>
+                       <NavLink exact to="/" className="glyph" >F</NavLink>
+                       <NavLink to="/about" className="glyph" >G</NavLink>
+                       <NavLink to="/work" className="glyph" >H</NavLink>
+                       <NavLink to="/connect" className="glyph" >I</NavLink>
                     </div>
-                  </div>
+                  
                </div>
 
                 <ul className="left-nav nav">
-                 <li className="nav-item home-img"><NavLink exact to="/">Home</NavLink></li>
+                 <li className="nav-item"><NavLink exact to="/">Home</NavLink></li>
                  <li className="nav-item"><NavLink to="/about">About</NavLink></li>
                 </ul>
                    <img src={logo} className="desktop-logo" alt="logo" />

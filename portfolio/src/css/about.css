@@ -1,0 +1,14 @@
+@keyframes  words-animation {
+    0% {
+    top: -6000px;
+    transform: rotateX(50deg)  translateZ(100px);
+     opacity: 0;
+  }
+ 
+   100% {
+    top: 0px;
+    transform: rotateX(0deg) translateZ(0px);
+    opacity: 1;
+   }
+ 
+}
