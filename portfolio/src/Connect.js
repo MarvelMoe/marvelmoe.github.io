@@ -4,6 +4,7 @@ const Connect = () => (
 
 		<div className="connect container"> 
 			<h2>Let's Connect </h2> 
+			<p className="work-intro">As they say in Oakland, Holla at me and we can have some tea & crumpets.</p>
 			 <a href="mailto:moe.himed@gmail.com" className=" glyph" target="_blank" rel="noopener noreferrer">A</a> 
  			 <a href="https://www.facebook.com/moe.himed" className="glyph" target="_blank" rel="noopener noreferrer">B</a>
  			 <a href="https://twitter.com/MoeHimed" className="glyph" target="_blank" rel="noopener noreferrer">C</a>

@@ -10,7 +10,7 @@ const Home = () => (
 					<div className="E">E</div>
 					<div className="HIMED"> HIMED</div>
 				</h1>
-				<hr className="hr-line " />
+				<hr className="hr-line" />
 				 <h2 className="full-stack">Full Stack Developer</h2>
 			</div>
 		</div>

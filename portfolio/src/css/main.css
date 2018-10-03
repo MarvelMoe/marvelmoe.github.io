@@ -16,18 +16,22 @@
   margin: 1em .5em;
   text-decoration: none; }
 
+a.glyph:hover {
+  color: dodgerblue; }
+
 /*  Mixins */
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: "Oswald", sans-serif;
   -webkit-font-smoothing: antialiased;
   background: #000;
-  color: #fff; }
+  color: #fff;
+  overflow-x: hidden; }
 
 h1 {
-  font-family: impact;
-  font-weight: 700;
+  font-family: "Oswald", sans-serif;
+  font-weight: 900;
   font-size: 5em;
   letter-spacing: 4px;
   color: #fff;
@@ -35,7 +39,14 @@ h1 {
 
 h2 {
   color: #fff;
-  font-family: impact, sans-serif; }
+  font-family: "Oswald", sans-serif; }
+
+#root {
+  overflow-x: visible; }
+  @media (max-width: 576px) {
+    #root {
+      overflow-x: hidden;
+      height: 100vh; } }
 
 .container {
   width: 85%;
@@ -45,7 +56,8 @@ h2 {
   margin-left: auto; }
   @media (max-width: 576px) {
     .container {
-      width: 90%; } }
+      width: 90%;
+      padding: 0; } }
 
 .nav {
   display: flex; }
@@ -63,14 +75,10 @@ h2 {
 
 .left-nav {
   webkit-box-flex: 1;
-  -ms-flex: 1 1 0px;
-  -webkit-flex: 1 1 0px;
   flex: 1 1 0px; }
 
 .right-nav {
   webkit-box-flex: 1;
-  -ms-flex: 1 1 0px;
-  -webkit-flex: 1 1 0px;
   flex: 1 1 0px; }
 
 .parent-nav {
@@ -100,31 +108,29 @@ h2 {
 
 .app-wrapper {
   text-align: center;
-  position: absolute;
   background-image: url(../images/textured_background.png);
   width: 100%;
   height: 350px; }
 
-.app-title {
-  font-size: 2.5em; }
-
 .outer-wrapper {
-  position: relative;
   height: 100%;
   width: 100%;
-  user-select: none; }
+  user-select: none;
+  text-align: center;
+  margin-top: 2.5em; }
+  @media (max-width: 576px) {
+    .outer-wrapper {
+      margin-top: 0.5em; } }
 
 .inner-wrap {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%); }
+  display: grid;
+  justify-content: center;
+  align-items: center; }
 
 .moe-himed {
   line-height: 0.2; }
 
 .M, .O, .E, .HIMED {
-  position: relative;
   display: inline-block; }
 
 .M {
@@ -149,38 +155,23 @@ h2 {
 .full-stack {
   animation: animate-full 2s linear 4s forwards;
   font-size: 3em;
-  opacity: 0; }
+  opacity: 0;
+  transition: .5s ease-in-out; }
 
 .hr-line {
+  width: 100%;
+  box-shadow: 0 0 1px 1px #fff;
   animation: animate-left .5s linear 6s forwards;
   opacity: 0; }
 
-/* MOBILE MENU */
-.mobile-wrapper {
-  display: flex;
-  display: none; }
-
-.mobile-content {
-  position: fixed;
-  right: 1em;
-  top: 2em; }
-  .mobile-content a {
-    color: #fff;
-    padding: 10px;
-    text-decoration: none;
-    display: inline;
-    -webkit-transition: .5s all ease;
-    transition: .5s all ease;
-    font-size: 2em; }
-    @media (max-width: 576px) {
-      .mobile-content a {
-        font-size: 1.25em; } }
-
 /*CONNECT SECTION*/
 .connect {
-  margin-top: 3em; }
+  margin-top: 3em;
+  margin-bottom: 3em; }
   .connect a {
     font-size: 3.4em; }
+    .connect a:hover {
+      color: dodgerblue; }
     @media (max-width: 968px) {
       .connect a {
         display: block;
@@ -188,7 +179,8 @@ h2 {
 
 /*WORKS SECTION*/
 .work-wrapper {
-  margin-top: 3em; }
+  margin-top: 3em;
+  margin-bottom: 3em; }
 
 .work-intro {
   padding: 1.5em;
@@ -207,7 +199,7 @@ h2 {
   .work-block .single-work {
     position: relative;
     overflow: hidden;
-    width: 300px;
+    width: auto;
     text-align: center;
     cursor: pointer; }
     .work-block .single-work figcaption::before {
@@ -216,14 +208,15 @@ h2 {
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.75);
+      background: rgba(0, 0, 0, 0.8);
       content: '';
       opacity: 0;
-      transform: translate3d(0, 20%, 0); }
+      transform: translate3d(100%, 100%, 100%); }
     .work-block .single-work figcaption::before, .work-block .single-work figcaption p {
       transition: opacity 0.5s, transform 0.5s; }
     .work-block .single-work .image {
-      width: 300px; }
+      width: 300px;
+      transition: .8s all ease-in-out; }
       @media (max-width: 576px) {
         .work-block .single-work .image {
           width: 100%; } }
@@ -236,13 +229,13 @@ h2 {
       width: 100%;
       color: #484c61;
       transition: transform 0.35s, color 0.35s;
-      transform: translate3d(0, -50%, 0); }
+      transform: translate3d(0%, 200%, 0%); }
     .work-block .single-work p {
       position: absolute;
       top: 50%;
       left: 0;
-      padding-bottom: 1.5em;
-      width: 100%;
+      width: auto;
+      padding: 0 15%;
       opacity: 0;
       font-weight: 900;
       color: #fff;
@@ -256,19 +249,25 @@ h2 {
       color: #fff;
       transform: translate3d(0, -50%, 0) translate3d(0, -40px, 0);
       top: 50%; }
+    .work-block .single-work:hover img {
+      transform: scale(1.02); }
 
 /* ABOUT SECTION  */
 .about-wrapper {
   margin-top: 3em; }
 
-.about-img {
-  grid-row: 1; }
-  @media (max-width: 968px) {
-    .about-img {
-      grid-row: 2; } }
+@media (max-width: 968px) {
+  .about-img {
+    grid-row: 2; } }
 
 .about-content {
-  animation: words-animation 3s ease forwards; }
+  animation: words-animation 3s ease forwards;
+  background: black;
+  padding: .4em; }
+  @media (max-width: 968px) {
+    .about-content {
+      grid-row: 1;
+      background: transparent; } }
   .about-content p {
     font-size: 1.25em; }
 
@@ -311,6 +310,8 @@ h2 {
   width: 58px;
   height: 58px;
   float: left; }
+  .sprite:hover {
+    opacity: .7; }
 
 .sass {
   background-position: -141px 56px !important; }
@@ -331,18 +332,47 @@ h2 {
   background-position: -314px 56px !important; }
 
 .spare-time {
-  margin: 2em; }
+  margin: 0 auto;
+  width: 800px; }
   @media (max-width: 968px) {
     .spare-time {
-      margin: 0; } }
+      margin: 0;
+      width: auto; } }
   .spare-time p {
-    padding: 2em 3em;
+    padding: 1em;
+    font-family: 'Oswald';
     font-size: 1.25em; }
+  .spare-time .images {
+    transition: .6s ease-in-out; }
   .spare-time img {
+    border-radius: 3px;
     filter: sepia(80%);
-    transition: .5s all ease-in-out; }
+    transition: 1.2s all ease-in-out; }
     .spare-time img:hover {
-      filter: blur(1px); }
+      filter: blur(1px);
+      cursor: crosshair; }
+
+/* MOBILE MENU */
+.mobile-wrapper {
+  display: none;
+  z-index: 999999; }
+
+.mobile-content {
+  position: fixed;
+  right: 1em;
+  top: 2em;
+  z-index: 999999; }
+  .mobile-content a {
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    display: inline;
+    -webkit-transition: .5s all ease;
+    transition: .5s all ease;
+    font-size: 2em; }
+    @media (max-width: 576px) {
+      .mobile-content a {
+        font-size: 1.25em; } }
 
 /* ANIMATIONS */
 @keyframes spinaroo {
@@ -367,7 +397,7 @@ h2 {
 
 @keyframes animate-o {
   0% {
-    transform: matrix(0.1, 0, 0, 0.1, 0, 0);
+    transform: matrix(0.15, 0, 0, 1, 0, 30);
     opacity: 0; }
   100% {
     transform: matrix(1, 0, 0, 1, 0, 0);
@@ -375,7 +405,7 @@ h2 {
 
 @keyframes animate-e {
   0% {
-    transform: matrix(1, 0, 0, 0.15, 0, -25);
+    transform: matrix(0.15, 0, 0, 1, 0, 30);
     opacity: 0; }
   100% {
     transform: matrix(1, 0, 0, 1, 0, 0);
@@ -413,14 +443,18 @@ h2 {
     transform: matrix(1, 0, 0, 1, 0, 0);
     opacity: 1; } }
 
-/* MEDIA QUEROES */
+@keyframes animate-rotate {
+  0% {
+    transform: rotate3d(-0.8, -6, -0.4, 90deg); }
+  100% {
+    transform: rotate3d(1, 1, 1, 0deg); } }
+
+/* 900PX SPECIIFC MEDIA QUERY */
 @media screen and (max-width: 900px) {
   .desktop-logo {
     display: none; }
   .mobile-logo, .mobile-wrapper {
     display: block; }
-  .mobile-wrapper {
-    display: flex; }
   .nav {
     float: right; }
   .nav-item a {
@@ -431,3 +465,9 @@ h2 {
     font-size: 2em; }
   .image {
     width: 100%; } }
+
+.hide {
+  opacity: 0; }
+
+.rotateIn {
+  animation: animate-rotate 2s; }
