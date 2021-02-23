@@ -1,2 +1,4 @@
-
-assets/images/laptop-coffee_925x.jpg
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
