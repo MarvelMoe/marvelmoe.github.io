@@ -15,13 +15,13 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <div className="app-wrapper">
             <Header />
-             <Route exact path="/" component={Home} />
-             <Route path="/connect" component={Connect} />
-             <Route path="/work" component={Work} />
-             <Route path="/about" component={About} />
+             <Route  path={process.env.PUBLIC_URL + '/'} component={Home} />
+             <Route  path={process.env.PUBLIC_URL + '/connect'} component={Connect} />
+             <Route path={process.env.PUBLIC_URL + '/work'}  component={Work} />
+             <Route path={process.env.PUBLIC_URL + '/about'} component={About} />
         </div>
       </BrowserRouter>
     );
